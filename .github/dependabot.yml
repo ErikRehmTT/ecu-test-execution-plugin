@@ -9,11 +9,11 @@ updates:
       - dependency-name: "org.spockframework:spock-junit4"  # upgrade includes multiple transitive version, not supported
       - dependency-name: "org.jenkins-ci.jpi"               # maintenance version should not be upgraded automatically
       - dependency-name: "org.openapi.generator"            # API generator depends on the ECU-TEST openapi.yml
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 1
     reviewers:
-      - 'TT-S3-D1'
-      - 'MartinGroscheTT'
+      - 'ErikRehmTT'
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: daily
+      time: "09:35"
