@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Save Timestamp
         run: |
-          $(date +%s) >> ${{env.timestamp}}
+          echo "timestamp=$(date +%s)" >> $GITHUB_ENV
       - name: Get Commit Timestamp
         uses: actions/github-script@v7.0.1
         with:
@@ -29,7 +29,7 @@ jobs:
         run: |
           commit_ts = $(date --date="${{env.commitDate}}" "+%s")
           diff = ${{env.timestamp}} - $commit_ts
-          echo "Seconds since commit: ${diff}" >>$GITHUB_OUTPUT
+          echo "Seconds since commit: ${diff}" >> $GITHUB_STEP_SUMMARY
       - name: Checkout Code
         uses: actions/checkout@v3
       - name: Read Plugin Version
