@@ -28,7 +28,7 @@ jobs:
       - name: calculate tts
         run: |
           commit_ts=$(date --date="${{env.commitDate}}" "+%s")
-          diff=${{env.timestamp}} - $commit_ts
+          diff=$((${{env.timestamp}} - $commit_ts))
           echo "Seconds since commit: ${diff}" >> $GITHUB_STEP_SUMMARY
       - name: Checkout Code
         uses: actions/checkout@v3
