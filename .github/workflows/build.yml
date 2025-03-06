@@ -34,7 +34,7 @@ jobs:
           diff=$((${{env.timestamp}} - $commit_ts))
           echo "Seconds since commit: ${diff}" >> $GITHUB_STEP_SUMMARY
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Read Plugin Version
         uses: madhead/read-java-properties@latest
         id: version
